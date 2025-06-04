@@ -26,7 +26,6 @@ public class ProductService {
     public void updateStockPessimistic(Long productId, int quantity) {
         Product product = productRepository.findByIdForUpdate(productId)
                 .orElseThrow();
-
         try {
             Thread.sleep(1000); // Имитация долгой операции
         } catch (InterruptedException e) {

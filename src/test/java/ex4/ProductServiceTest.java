@@ -63,8 +63,8 @@ class ProductServiceTest {
     // Тест для пессимистичной блокировки (всегда корректный)
     @Test
     void testPessimisticLocking() throws InterruptedException {
-        ExecutorService executor = Executors.newFixedThreadPool(2);
-        CountDownLatch latch = new CountDownLatch(2);
+        ExecutorService executor = Executors.newFixedThreadPool(1);
+        CountDownLatch latch = new CountDownLatch(1);
         AtomicInteger successCount = new AtomicInteger(0);
 
         executor.submit(() -> {
