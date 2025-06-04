@@ -1,6 +1,9 @@
 package ex1;
 
 public class Main {
+
+    public static Object book = new Object();
+
     public static void main(String[] args) throws InterruptedException {
 
 
