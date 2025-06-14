@@ -25,7 +25,9 @@ public class AccountService {
 
     @Transactional
     public void transferMoneyWithOptimisticLock(Long accountId, double amount) {
-
+        Account account = accountRepository.findById(accountId).orElseThrow();
+        account.setBalance(account.getBalance() + amount);
+        accountRepository.save(account);
     }
 
     @Transactional
