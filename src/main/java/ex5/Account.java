@@ -10,6 +10,9 @@ public class Account {
 
     private String accountNumber;
     private double balance;
+    @Version  // Оптимистичная блокировка
+    private Integer version;
+
 
     // Геттеры и сеттеры
     public Long getId() { return id; }
