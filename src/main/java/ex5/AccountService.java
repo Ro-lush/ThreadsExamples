@@ -32,6 +32,8 @@ public class AccountService {
 
     @Transactional
     public void transferMoneyWithPessimisticLock(Long accountId, double amount) {
-
+        Account account = accountRepository.findByIdForUpdate(accountId);
+        account.setBalance(account.getBalance() + amount);
+         accountRepository.save(account);
     }
 }
